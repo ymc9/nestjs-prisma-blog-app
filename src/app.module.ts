@@ -1,7 +1,7 @@
 import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { TraditionalController } from './traditional/traditional.controller';
 import { PrismaService } from './prisma.service';
-import { DeclarativeController } from './declarative/enhanced.controller';
+import { DeclarativeController } from './declarative/declarative.controller';
 import { ClsModule } from 'nestjs-cls';
 import { CrudMiddleware } from './zen/crud.middleware';
 import { EnhancedPrismaService } from './declarative/enhanced-prisma.service';
