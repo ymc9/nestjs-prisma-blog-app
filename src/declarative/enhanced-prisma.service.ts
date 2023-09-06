@@ -16,7 +16,6 @@ export class EnhancedPrismaService {
 
   private get enhancedPrisma() {
     // create an enhanced PrismaClient for the user
-    console.log('USER:', this.clsService.get('user'));
     return enhance(
       this.prismaService,
       { user: this.clsService.get('user') },

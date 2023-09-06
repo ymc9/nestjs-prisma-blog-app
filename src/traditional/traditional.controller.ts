@@ -54,7 +54,7 @@ export class TraditionalController {
 
     return this.prismaService.post.findMany({
       where: { AND: [searchFilter, authFilter] },
-      // make sure to exclude "email" field
+      // make sure to exclude "email" field; needed in all routes that fetch posts
       include: { author: { select: { id: true, name: true, role: true } } },
       take: Number(take) || undefined,
       skip: Number(skip) || undefined,
@@ -99,7 +99,6 @@ export class TraditionalController {
       email: string;
     },
   ): Promise<UserModel> {
-    console.log('userData', userData);
     return this.prismaService.user.create({
       data: {
         name: userData?.name,
