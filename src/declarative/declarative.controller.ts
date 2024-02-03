@@ -24,7 +24,7 @@ export class DeclarativeController {
 
   @Get('post/:id')
   async getPostById(@Param('id') id: string): Promise<PostModel> {
-    return this.enhancedPrisma.post.findUnique({ where: { id: Number(id) } });
+    return this.enhancedPrisma.post.findById(parseInt(id));
   }
 
   @Get('post')

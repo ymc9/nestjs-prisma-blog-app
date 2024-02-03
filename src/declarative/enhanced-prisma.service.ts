@@ -1,5 +1,4 @@
 import { Injectable } from '@nestjs/common';
-import type { PrismaClient } from '@prisma/client';
 import { enhance } from '@zenstackhq/runtime';
 import { ClsService } from 'nestjs-cls';
 import { PrismaService } from '../prisma.service';
@@ -23,10 +22,10 @@ export class EnhancedPrismaService {
     );
   }
 
-  get user(): PrismaClient['user'] {
+  get user() {
     return this.enhancedPrisma.user;
   }
-  get post(): PrismaClient['post'] {
+  get post() {
     return this.enhancedPrisma.post;
   }
 }
